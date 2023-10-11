@@ -57,7 +57,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:contentDescription="@string/refresh_btn"
                 android:src="@drawable/ic_refresh"
-                tools:ignore="RedundantDescriptionCheck" />
+                tools:ignore="RedundantDescriptionCheck,TouchTargetSizeCheck" />
 
             <ImageButton
                 android:id="@+id/goBtn"

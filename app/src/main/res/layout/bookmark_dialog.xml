@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -20,9 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/bookmark_name"
-            android:textCursorDrawable="@color/cool_blue"
+            android:inputType="textAutoComplete"
             android:maxLength="200"
-            android:inputType="textAutoComplete"/>
+            android:textCursorDrawable="@color/cool_blue"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

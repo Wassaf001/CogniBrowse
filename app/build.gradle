@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -30,14 +31,14 @@ android {
         jvmTarget = '1.8'
     }
 
-    //for viewbinding
     buildFeatures{
         viewBinding true
     }
+    namespace 'com.wassafqais.cognibrowse'
 }
 
 dependencies {
-
+    implementation 'com.squareup.okhttp3:okhttp:x.y.z' // Replace x.y.z with the actual version
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -48,4 +49,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //for storing custom objects in shared preferences
     implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }

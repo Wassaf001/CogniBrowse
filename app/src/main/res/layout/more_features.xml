@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -21,7 +22,8 @@
             android:background="?attr/selectableItemBackground"
             app:iconTint="@color/black"
             android:textColor="@color/black"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/forwardBtn"
@@ -34,7 +36,8 @@
             android:background="?attr/selectableItemBackground"
             app:iconTint="@color/black"
             android:textColor="@color/black"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/saveBtn"
@@ -47,7 +50,8 @@
             android:background="?attr/selectableItemBackground"
             app:iconTint="@color/black"
             android:textColor="@color/black"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
 
 
     </LinearLayout>
@@ -68,7 +72,8 @@
             android:background="?attr/selectableItemBackground"
             app:iconTint="@color/black"
             android:textColor="@color/black"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/desktopBtn"
@@ -81,7 +86,8 @@
             android:background="?attr/selectableItemBackground"
             app:iconTint="@color/black"
             android:textColor="@color/black"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/fullscreenBtn"
@@ -94,7 +100,8 @@
             android:background="?attr/selectableItemBackground"
             app:iconTint="@color/black"
             android:textColor="@color/black"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
 
 
     </LinearLayout>

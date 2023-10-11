@@ -26,6 +26,7 @@ import com.wassafqais.cognibrowse.activity.changeTab
 import com.wassafqais.cognibrowse.databinding.FragmentBrowseBinding
 import java.io.ByteArrayOutputStream
 
+@Suppress("DEPRECATION")
 class BrowseFragment(private var urlNew: String) : Fragment() {
 
     lateinit var binding: FragmentBrowseBinding
@@ -111,7 +112,7 @@ class BrowseFragment(private var urlNew: String) : Fragment() {
                             icon!!.compress(Bitmap.CompressFormat.PNG, 100, array)
                             MainActivity.bookmarkList[MainActivity.bookmarkIndex].image = array.toByteArray()
                         }
-                    }catch (e: Exception){}
+                    }catch (_: Exception){}
                 }
 
                 override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {

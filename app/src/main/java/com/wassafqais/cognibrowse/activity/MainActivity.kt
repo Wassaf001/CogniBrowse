@@ -34,7 +34,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textview.MaterialTextView
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.wassafqais.cognibrowse.CogniFragment
 import com.wassafqais.cognibrowse.R
 import com.wassafqais.cognibrowse.activity.MainActivity.Companion.myPager
 import com.wassafqais.cognibrowse.activity.MainActivity.Companion.tabsBtn
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         var tabsList: ArrayList<Tab> = ArrayList()
-        private var isFullscreen: Boolean = true
+        private var isFullscreen: Boolean = false
         var isDesktopSite: Boolean = false
         var bookmarkList: ArrayList<Bookmark> = ArrayList()
         var bookmarkIndex: Int = -1
@@ -76,18 +75,32 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         getAllBookmarks()
 
         tabsList.add(Tab("Home", HomeFragment()))
-        tabsList.add(Tab("Cogni", CogniFragment()))
         binding.myPager.adapter = TabsAdapter(supportFragmentManager, lifecycle)
         binding.myPager.isUserInputEnabled = false
         myPager = binding.myPager
         tabsBtn = binding.tabsBtn
 
         initializeView()
-        changeFullscreen(enable = true)
+        changeFullscreen(enable = false)
+
+//        val aiButton = findViewById<Button>(R.id.ai_button)
+//
+//        aiButton.setOnClickListener {
+//
+//            val aiFragment = AiFragment()
+//
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.home_page, aiFragment)
+//                .addToBackStack(null)
+//                .commit()
+//        }
     }
+
+
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onBackPressed() {
