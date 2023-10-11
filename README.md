@@ -48,7 +48,7 @@ Your Awesome Android Web Browser is a feature-rich, open-source browser project 
 
 2. Browse the web using the user-friendly interface.
 
-3. Access AI features by tapping the AI Assistant button.
+3. Access AI features by tapping the Cogni button.
 
 ## AI Features
 
