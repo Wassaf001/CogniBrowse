@@ -2,7 +2,6 @@ package com.wassafqais.cognibrowse.activity
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -16,7 +15,6 @@ import android.print.PrintManager
 import android.view.Gravity
 import android.view.WindowManager
 import android.webkit.WebView
-import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -77,13 +75,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-       // Start
-//        val aiButton = findViewById<Button>(R.id.ai_button)
-//        aiButton.setOnClickListener {
-//            val intent =  Intent(this,AiActivity::class.java)
-//            startActivity(intent)
-//        }
-       // End
 
         getAllBookmarks()
 

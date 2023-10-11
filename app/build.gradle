@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -30,7 +31,6 @@ android {
         jvmTarget = '1.8'
     }
 
-    //for viewbinding
     buildFeatures{
         viewBinding true
     }
@@ -38,7 +38,7 @@ android {
 }
 
 dependencies {
-
+    implementation 'com.squareup.okhttp3:okhttp:x.y.z' // Replace x.y.z with the actual version
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
