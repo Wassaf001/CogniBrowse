@@ -81,6 +81,4 @@ We welcome contributions from the open-source community. If you want to contribu
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
 
-Feel free to customize this README to match your project's specific features, and make sure to replace the placeholder text and links with your actual project information. An attractive and informative README will help you showcase your project and attract contributors and users.
