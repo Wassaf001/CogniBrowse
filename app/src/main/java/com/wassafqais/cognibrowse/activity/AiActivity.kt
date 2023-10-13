@@ -21,7 +21,7 @@ class AiActivity : AppCompatActivity() {
     lateinit var idTVQuestion: TextView
     lateinit var etQuestion: TextInputEditText
 
-    companion object{
+    companion object {
         private var isFullscreen: Boolean = false
     }
 
@@ -54,20 +54,19 @@ class AiActivity : AppCompatActivity() {
     }
 
     fun getResponse(question: String, callback: (String) -> Unit) {
-        // setting text for question on below line.
         idTVQuestion.text = question
         etQuestion.setText("")
 
         val apiKey = "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"
-        val url = "https://api.openai.com/v1/engines/davinci-codex/completions"
+        val url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
 
         val requestBody = """
-            {
-                "prompt": "$question",
-                "max_tokens": 100,
-                "temperature": 0
-            }
-        """.trimIndent()
+        {
+            "prompt": "$question",
+            "max_tokens": 50,
+            "temperature": 0
+        }
+    """.trimIndent()
 
         val request = Request.Builder()
             .url(url)
@@ -79,19 +78,36 @@ class AiActivity : AppCompatActivity() {
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("error", "API failed", e)
+                callback("Error: ${e.message}")
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val body = response.body?.string()
-                if (body != null) {
-                    Log.v("data", body)
-                } else {
-                    Log.v("data", "empty")
+                try {
+                    val body = response.body?.string()
+                    if (body != null) {
+                        Log.v("data", body)
+                        val jsonObject = JSONObject(body)
+
+                        if (jsonObject.has("choices")) {
+                            val jsonArray: JSONArray = jsonObject.getJSONArray("choices")
+
+                            if (jsonArray.length() > 0) {
+                                val textResult = jsonArray.getJSONObject(0).getString("text")
+                                callback(textResult)
+                            } else {
+                                callback("No response from the server.")
+                            }
+                        } else {
+                            callback("No 'choices' field in the response.")
+                        }
+                    } else {
+                        Log.v("data", "empty")
+                        callback("No response from the server.")
+                    }
+                } catch (e: Exception) {
+                    Log.e("error", "Response parsing error", e)
+                    callback("Error: ${e.message}")
                 }
-                val jsonObject = JSONObject(body)
-                val jsonArray: JSONArray = jsonObject.getJSONArray("choices")
-                val textResult = jsonArray.getJSONObject(0).getString("text")
-                callback(textResult)
             }
         })
     }
