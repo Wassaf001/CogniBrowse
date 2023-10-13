@@ -58,7 +58,7 @@ class AiActivity : AppCompatActivity() {
         idTVQuestion.text = question
         etQuestion.setText("")
 
-        val apiKey = "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"
+        val apiKey = "API-KEY"
         val url = "https://api.openai.com/v1/engines/davinci-codex/completions"
 
         val requestBody = """
