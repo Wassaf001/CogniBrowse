@@ -91,18 +91,18 @@ class HomeFragment : Fragment() {
         binding.viewAllBtn.setOnClickListener {
             startActivity(Intent(requireContext(), BookmarkActivity::class.java))
         }
-
-        val aiButton = view?.findViewById<Button>(R.id.ai_button)
-        aiButton?.setOnClickListener {
-            val intent = Intent(requireContext(), AiActivity::class.java)
-            startActivity(intent)
-        }
-
-        val historyButton = view?.findViewById<Button>(R.id.history_button)
-        historyButton?.setOnClickListener {
-            val intent = Intent(requireContext(), HistoryActivity::class.java)
-            startActivity(intent)
-        }
+//
+//        val aiButton = view?.findViewById<Button>(R.id.ai_button)
+//        aiButton?.setOnClickListener {
+//            val intent = Intent(requireContext(), AiActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        val historyButton = view?.findViewById<Button>(R.id.history_button)
+//        historyButton?.setOnClickListener {
+//            val intent = Intent(requireContext(), HistoryActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 }
 

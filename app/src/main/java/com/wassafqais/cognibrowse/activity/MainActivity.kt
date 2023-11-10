@@ -2,6 +2,7 @@ package com.wassafqais.cognibrowse.activity
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -15,8 +16,10 @@ import android.print.PrintManager
 import android.view.Gravity
 import android.view.WindowManager
 import android.webkit.WebView
+import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.WindowCompat
@@ -222,6 +225,27 @@ class MainActivity : AppCompatActivity() {
                     saveAsPdf(web = frag.binding.webView)
                 else Snackbar.make(binding.root, "First Open A WebPage\uD83D\uDE03", 3000).show()
             }
+
+            dialogBinding.aiBtn.setOnClickListener {
+                val intent = Intent(this, AiActivity::class.java)
+                startActivity(intent)
+            }
+            dialogBinding.histBtn.setOnClickListener {
+                val intent = Intent(this, HistoryActivity::class.java)
+                startActivity(intent)
+            }
+
+//            val aiButton = view?.findViewById<Button>(R.id.aiBtn)
+//            aiButton?.setOnClickListener {
+//                val intent = Intent(requireContext(), AiActivity::class.java)
+//                startActivity(intent)
+//            }
+//
+//            val historyButton = view?.findViewById<Button>(R.id.histBtn)
+//            historyButton?.setOnClickListener {
+//                val intent = Intent(requireContext(), HistoryActivity::class.java)
+//                startActivity(intent)
+//            }
 
             dialogBinding.fullscreenBtn.setOnClickListener {
                 it as MaterialButton
