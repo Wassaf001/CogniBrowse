@@ -8,69 +8,20 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textview.MaterialTextView
 import com.wassafqais.cognibrowse.R
-import com.wassafqais.cognibrowse.model.Bookmark
-import com.wassafqais.cognibrowse.model.Tab
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
-import java.util.ArrayList
-import android.annotation.SuppressLint
-import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
-import android.print.PrintAttributes
-import android.print.PrintJob
-import android.print.PrintManager
-import android.view.Gravity
-import android.view.WindowManager
-import android.webkit.WebView
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Lifecycle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
-import com.google.gson.GsonBuilder
-import com.google.gson.reflect.TypeToken
-import com.wassafqais.cognibrowse.activity.MainActivity.Companion.myPager
-import com.wassafqais.cognibrowse.activity.MainActivity.Companion.tabsBtn
-import com.wassafqais.cognibrowse.adapter.TabAdapter
-import com.wassafqais.cognibrowse.databinding.ActivityMainBinding
-import com.wassafqais.cognibrowse.databinding.BookmarkDialogBinding
-import com.wassafqais.cognibrowse.databinding.MoreFeaturesBinding
-import com.wassafqais.cognibrowse.databinding.TabsViewBinding
-import com.wassafqais.cognibrowse.fragment.BrowseFragment
-import com.wassafqais.cognibrowse.fragment.HomeFragment
-import java.io.ByteArrayOutputStream
-import java.net.URL
-import java.text.SimpleDateFormat
-import java.util.*
 
 class AiActivity : AppCompatActivity() {
     private val client = OkHttpClient()
-    // creating variables on below line.
     lateinit var txtResponse: TextView
     lateinit var idTVQuestion: TextView
     lateinit var etQuestion: TextInputEditText
 
-    companion object{
+    companion object {
         private var isFullscreen: Boolean = false
     }
 
@@ -103,20 +54,19 @@ class AiActivity : AppCompatActivity() {
     }
 
     fun getResponse(question: String, callback: (String) -> Unit) {
-        // setting text for question on below line.
         idTVQuestion.text = question
         etQuestion.setText("")
 
-        val apiKey = "YOUR_API_KEY_HERE"
-        val url = "https://api.openai.com/v1/engines/davinci-codex/completions"
+        val apiKey = "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"
+        val url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
 
         val requestBody = """
-            {
-                "prompt": "$question",
-                "max_tokens": 100,
-                "temperature": 0
-            }
-        """.trimIndent()
+        {
+            "prompt": "$question",
+            "max_tokens": 50,
+            "temperature": 0
+        }
+    """.trimIndent()
 
         val request = Request.Builder()
             .url(url)
@@ -128,19 +78,36 @@ class AiActivity : AppCompatActivity() {
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("error", "API failed", e)
+                callback("Error: ${e.message}")
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val body = response.body?.string()
-                if (body != null) {
-                    Log.v("data", body)
-                } else {
-                    Log.v("data", "empty")
+                try {
+                    val body = response.body?.string()
+                    if (body != null) {
+                        Log.v("data", body)
+                        val jsonObject = JSONObject(body)
+
+                        if (jsonObject.has("choices")) {
+                            val jsonArray: JSONArray = jsonObject.getJSONArray("choices")
+
+                            if (jsonArray.length() > 0) {
+                                val textResult = jsonArray.getJSONObject(0).getString("text")
+                                callback(textResult)
+                            } else {
+                                callback("No response from the server.")
+                            }
+                        } else {
+                            callback("No 'choices' field in the response.")
+                        }
+                    } else {
+                        Log.v("data", "empty")
+                        callback("No response from the server.")
+                    }
+                } catch (e: Exception) {
+                    Log.e("error", "Response parsing error", e)
+                    callback("Error: ${e.message}")
                 }
-                val jsonObject = JSONObject(body)
-                val jsonArray: JSONArray = jsonObject.getJSONArray("choices")
-                val textResult = jsonArray.getJSONObject(0).getString("text")
-                callback(textResult)
             }
         })
     }

@@ -2,6 +2,7 @@ package com.wassafqais.cognibrowse.activity
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -15,8 +16,10 @@ import android.print.PrintManager
 import android.view.Gravity
 import android.view.WindowManager
 import android.webkit.WebView
+import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.WindowCompat
@@ -45,11 +48,13 @@ import com.wassafqais.cognibrowse.databinding.TabsViewBinding
 import com.wassafqais.cognibrowse.fragment.BrowseFragment
 import com.wassafqais.cognibrowse.fragment.HomeFragment
 import com.wassafqais.cognibrowse.model.Bookmark
+import com.wassafqais.cognibrowse.model.HistoryItem
 import com.wassafqais.cognibrowse.model.Tab
 import java.io.ByteArrayOutputStream
 import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -58,6 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         var tabsList: ArrayList<Tab> = ArrayList()
+        var HistoryList: ArrayList<HistoryItem> = ArrayList()
         private var isFullscreen: Boolean = false
         var isDesktopSite: Boolean = false
         var bookmarkList: ArrayList<Bookmark> = ArrayList()
@@ -87,19 +93,7 @@ class MainActivity : AppCompatActivity() {
         initializeView()
         changeFullscreen(enable = false)
 
-//        val aiButton = findViewById<Button>(R.id.ai_button)
-//
-//        aiButton.setOnClickListener {
-//
-//            val aiFragment = AiFragment()
-//
-//            supportFragmentManager.beginTransaction()
-//                .replace(R.id.home_page, aiFragment)
-//                .addToBackStack(null)
-//                .commit()
-//        }
     }
-
 
 
     @SuppressLint("NotifyDataSetChanged")
@@ -231,6 +225,27 @@ class MainActivity : AppCompatActivity() {
                     saveAsPdf(web = frag.binding.webView)
                 else Snackbar.make(binding.root, "First Open A WebPage\uD83D\uDE03", 3000).show()
             }
+
+            dialogBinding.aiBtn.setOnClickListener {
+                val intent = Intent(this, AiActivity::class.java)
+                startActivity(intent)
+            }
+            dialogBinding.histBtn.setOnClickListener {
+                val intent = Intent(this, HistoryActivity::class.java)
+                startActivity(intent)
+            }
+
+//            val aiButton = view?.findViewById<Button>(R.id.aiBtn)
+//            aiButton?.setOnClickListener {
+//                val intent = Intent(requireContext(), AiActivity::class.java)
+//                startActivity(intent)
+//            }
+//
+//            val historyButton = view?.findViewById<Button>(R.id.histBtn)
+//            historyButton?.setOnClickListener {
+//                val intent = Intent(requireContext(), HistoryActivity::class.java)
+//                startActivity(intent)
+//            }
 
             dialogBinding.fullscreenBtn.setOnClickListener {
                 it as MaterialButton
@@ -409,3 +424,4 @@ fun checkForInternet(context: Context): Boolean {
         return networkInfo.isConnected
     }
 }
+

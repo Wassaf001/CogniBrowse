@@ -1,7 +1,7 @@
 
 
 <div align="center">
-  <img src="project_logo.png" alt="Project Logo" width="200">
+  <img src="pear.jpeg" alt="PearIt" width="200">
 </div>
 
 # CogniBrowse- An Android Web Browser with AI Support
