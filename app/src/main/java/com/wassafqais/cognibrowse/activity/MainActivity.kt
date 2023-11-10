@@ -45,11 +45,13 @@ import com.wassafqais.cognibrowse.databinding.TabsViewBinding
 import com.wassafqais.cognibrowse.fragment.BrowseFragment
 import com.wassafqais.cognibrowse.fragment.HomeFragment
 import com.wassafqais.cognibrowse.model.Bookmark
+import com.wassafqais.cognibrowse.model.HistoryItem
 import com.wassafqais.cognibrowse.model.Tab
 import java.io.ByteArrayOutputStream
 import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         var tabsList: ArrayList<Tab> = ArrayList()
+        var HistoryList: ArrayList<HistoryItem> = ArrayList()
         private var isFullscreen: Boolean = false
         var isDesktopSite: Boolean = false
         var bookmarkList: ArrayList<Bookmark> = ArrayList()
@@ -87,19 +90,7 @@ class MainActivity : AppCompatActivity() {
         initializeView()
         changeFullscreen(enable = false)
 
-//        val aiButton = findViewById<Button>(R.id.ai_button)
-//
-//        aiButton.setOnClickListener {
-//
-//            val aiFragment = AiFragment()
-//
-//            supportFragmentManager.beginTransaction()
-//                .replace(R.id.home_page, aiFragment)
-//                .addToBackStack(null)
-//                .commit()
-//        }
     }
-
 
 
     @SuppressLint("NotifyDataSetChanged")
@@ -409,3 +400,4 @@ fun checkForInternet(context: Context): Boolean {
         return networkInfo.isConnected
     }
 }
+

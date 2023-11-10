@@ -52,13 +52,31 @@
         android:layout_width="100dp"
         android:layout_height="51dp"
         android:layout_marginTop="120dp"
+        android:backgroundTint="@color/cardview_light_background"
         android:text="@string/ai"
         android:textColor="#000000"
-        android:backgroundTint="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewAllBtn"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/history_button"
+        android:layout_width="100dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:text="History"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewAllBtn"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
