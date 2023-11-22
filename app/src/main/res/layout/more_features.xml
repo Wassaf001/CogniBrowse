@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_back"
+            android:text="@string/back"
+            app:iconGravity="top"
+            android:background="?attr/selectableItemBackground"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/histBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_history"
+            android:text="History"
+            app:iconGravity="top"
+            android:background="?attr/selectableItemBackground"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/forwardBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_forward"
+            android:text="@string/forward"
+            app:iconGravity="top"
+            android:background="?attr/selectableItemBackground"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_save"
+            android:text="@string/save"
+            app:iconGravity="top"
+            android:background="?attr/selectableItemBackground"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/aiBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_ai"
+            android:text="Cogni"
+            app:iconGravity="top"
+            android:background="?attr/selectableItemBackground"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bookmarkBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_bookmark"
+            android:text="Bookmark"
+            app:iconGravity="top"
+            android:background="?attr/selectableItemBackground"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/desktopBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_desktop"
+            android:text="@string/desktop"
+            app:iconGravity="top"
+            android:background="?attr/selectableItemBackground"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fullscreenBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_fullscreen"
+            android:text="@string/fullscreen"
+            app:iconGravity="top"
+            android:background="?attr/selectableItemBackground"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            tools:ignore="VisualLintButtonSize" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
