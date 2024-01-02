@@ -4,7 +4,7 @@
   <img src="pear.jpeg" alt="PearIt" width="200">
 </div>
 
-# CogniBrowse- An Android Web Browser with AI Support | Download APK: [![APK](https://drive.google.com/uc?id=1f1yhKyfKklV8VG5G7QP3soVYbYgPwB)](https://drive.google.com/file/d/1f1yhKyfKklV8VG5G7QP3soVYbYgPwB/view?usp=sharing)
+# CogniBrowse- An Android Web Browser with AI Support | Download APK: [![APK](https://drive.google.com/uc?id=1f1yhKyfKklV8VG5G7QP3soVYbYgPwB)](https://drive.google.com/file/d/1f1yhKyfKklV8_VG5G7QP3soVYbYgPwB_/view?usp=sharing)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![GitHub release](https://img.shields.io/github/v/release/yourusername/yourbrowser)](https://github.com/yourusername/yourbrowser/releases)
 [![GitHub issues](https://img.shields.io/github/issues/yourusername/yourbrowser)](https://github.com/yourusername/yourbrowser/issues)
