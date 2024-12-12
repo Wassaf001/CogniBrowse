@@ -18,7 +18,7 @@ Your Awesome Android Web Browser is a feature-rich, open-source browser project 
 
 ## Features
 
-- **AI Assistance**: Utilize AI to provide intelligent recommendations, text summarization, and more.
+- **AI Assistance**: Utilize AI to search queries directly in a new activity.
 - **Fast and Secure**: A high-performance web browser with advanced security features.
 - **Customization**: Tailor the browser's appearance and functionality to suit your needs.
 - **Cross-Platform**: Available for Android smartphones and tablets.
@@ -52,11 +52,10 @@ Your Awesome Android Web Browser is a feature-rich, open-source browser project 
 
 ## AI Features
 
-Our browser integrates powerful AI capabilities to make your browsing smarter and more efficient. Here are some of the AI features:
+Our browser integrates powerful AI capabilities to make your browsing smarter and more efficient. Here are some of the AI features we plan to implement:
 
 - **Recommendations**: Receive personalized content recommendations based on your browsing history.
 - **Text Summarization**: Summarize lengthy articles and web pages for quick reading.
-- **Voice Search**: Use voice commands to search the web.
 
 ## Contributing
 
