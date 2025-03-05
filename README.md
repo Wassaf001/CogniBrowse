@@ -12,7 +12,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/yourusername/yourbrowser)](https://github.com/yourusername/yourbrowser/network)
 [![GitHub contributors](https://img.shields.io/github/contributors/yourusername/yourbrowser)](https://github.com/yourusername/yourbrowser/graphs/contributors)
 
-Your Awesome Android Web Browser is a feature-rich, open-source browser project that seamlessly integrates AI capabilities to enhance the web browsing experience.
+CogniBrowse is a feature-rich, open-source browser project that seamlessly integrates AI capabilities to enhance the web browsing experience.
 
 ![Demo Gif](demo.gif)
 
@@ -35,7 +35,7 @@ Your Awesome Android Web Browser is a feature-rich, open-source browser project 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/yourbrowser.git
+   git clone https://github.com/yourusername/cogni-browse.git
    ```
 
 2. Open the project in Android Studio.
