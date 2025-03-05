@@ -35,7 +35,7 @@ CogniBrowse is a feature-rich, open-source browser project that seamlessly integ
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/cogni-browse.git
+   https://github.com/Wassaf001/CogniBrowse.git
    ```
 
 2. Open the project in Android Studio.
